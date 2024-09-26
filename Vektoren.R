@@ -6,7 +6,7 @@
 # -> sind aneinander hängende Werte
 
 vec1 = c(1, 2, 3, 123)
-# -> c() steht für combine oder concetinate als Verkettung der Werte
+# -> c() steht für combine als Verkettung der Werte
 
 vec1
 # -> so werden die verketteten Werte dargestellt
@@ -106,5 +106,22 @@ vec2 * 2
 
 
 # Aufgabe
+
+# Wählen sie aus dem Vektor vec alle geraden Zahlen aus und speichern Sie diese in einem neuen
+# Vektor vec_a
+
+vec = 1:20
+
+vec_a = vec[vec %% 2 == 0]
+vec_b = vec[vec %% 2 != 0]
+
+mean(vec_a)
+mean(vec_b)
+
+cumsum(vec_a)
+cumsum(vec_b)
+sum(vec_a)
+sum(vec_b)
+
 
 

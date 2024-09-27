@@ -117,5 +117,21 @@ df[df$Alter > 25, ]
 
 # zeigen was ein dataframe ist, dann daten einlesen aus excel tabellen und csv dateien
 
+pirates = read.csv("C:/RKurs/pirates.csv")
 
+head(pirates)
 
+summary(pirates$tattoos)
+
+table(pirates$sex)
+
+t.test(pirates$weight[pirates$sex == "male"], pirates$weight[pirates$sex == "female"])
+
+boxplot(pirates$weight[pirates$sex == "male"], pirates$weight[pirates$sex == "female"])
+
+plot(density(pirates$weight[pirates$sex == "male"]),
+     main = "",
+     xlim = c(35, 120),
+     ylim = c(0, 0.05), col = "blue")
+
+lines(density(pirates$weight[pirates$sex == "female"]), col="red")

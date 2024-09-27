@@ -107,6 +107,29 @@ vec2 * 2
 
 # Aufgabe
 
+# erzeugen Sie einen Vektor vec mit den Zahlen 2, 23, 42, 256, 13
+# hängen Sie an den Vektor die Zahl 800 an
+# fügen Sie vor der Zahl 2 eine 0 dem Vektor hinzu
+# löschen Sie die Stelle mit Zahl 256 aus dem Vektor
+# überschreiben Sie die Zahl 800 mit der Zahl 799
+# wählen sie die ersten 3 Stellen des Vektors aus und speichern diese in einen neuen Vektor
+# wählen sie alle Stellen aus dem Vektor aus die größer sind als 20 und speichern Sie
+# diese ebenfalls in einem neuen Vektor
+# Bonus:
+# Wählen Sie die Zahlen des Vektors so aus, dass die gewählten Zahlen den Vektor in
+# sortierter Reihenfolge darstellen
+
+vec = c(2, 23, 42, 256, 13)
+
+vec = c(vec, 800)
+vec = c(0, vec)
+
+vec = vec[-5]
+
+vec[6] = 799
+
+vec[c(1, 2, 5, 3, 4, 6)]
+
 # Wählen sie aus dem Vektor vec alle geraden Zahlen aus und speichern Sie diese in einem neuen
 # Vektor vec_a
 

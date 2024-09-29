@@ -6,7 +6,7 @@ vec = 1:9
 
 mat = matrix(vec)
 mat
-# Vektorren lassen sich in Matrizen umwandeln
+# Vektoren lassen sich in Matrizen umwandeln
 # -> Dimensionen der Matrix muss mit angegeben werden
 
 mat = matrix(vec, nrow = 3, ncol = 3)
@@ -65,7 +65,7 @@ mat2
 
 mat = matrix(5, nrow = 5, ncol = 5)
 
-mat[2:4, 2:4] = 20
+mat[2:4, 2:4] = 25
 mat[3,3] = 50
 
 
@@ -73,65 +73,3 @@ mat = mat[-1,]
 mat = mat[-4,]
 mat = mat[,-c(1, 5)]
 
-#-----------------------------------------------
-# Dataframes
-#-------------------------------------------
-
-vec1 = 1:3
-
-vec2 = c(24, 28, 34)
-
-vec3 = c("Herbert", "Anna")
-
-df = data.frame("ID" = vec1, "Alter" = vec2, "Name" = vec3)
-
-vec3 = c("Herbert", "Anna", "Georg")
-
-df = data.frame("ID" = vec1, "Alter" = vec2, "Name" = vec3)
-
-df
-
-# -> hier auch zeigen, dass in R Studio der Dataframe angezeigt werden kann
-
-# noch mehr Optionen zu indizieren:
-
-df$ID
-
-df[,1]
-
-df$Name
-
-mean(df$Alter)
-
-
-df[, "Name"]
-
-df[, c("ID", "Name")]
-
-
-df[1,]
-
-df[df$Name == "Herbert", ]
-
-df[df$Alter > 25, ]
-
-# zeigen was ein dataframe ist, dann daten einlesen aus excel tabellen und csv dateien
-
-pirates = read.csv("C:/RKurs/pirates.csv")
-
-head(pirates)
-
-summary(pirates$tattoos)
-
-table(pirates$sex)
-
-t.test(pirates$weight[pirates$sex == "male"], pirates$weight[pirates$sex == "female"])
-
-boxplot(pirates$weight[pirates$sex == "male"], pirates$weight[pirates$sex == "female"])
-
-plot(density(pirates$weight[pirates$sex == "male"]),
-     main = "",
-     xlim = c(35, 120),
-     ylim = c(0, 0.05), col = "blue")
-
-lines(density(pirates$weight[pirates$sex == "female"]), col="red")

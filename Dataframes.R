@@ -50,6 +50,9 @@ df[df$Alter > 25, ]
 
 # durch Dataframes bleibt der Code lesbarer
 
+df$coolnes = 1000
+
+df$eyecolor = c("blue", "brown", "brown")
 
 # Daten einlesen
 
@@ -59,9 +62,6 @@ pirates = read.csv("C:/RKurs/pirates.csv")
 
 # erster Überblick
 head(pirates)
-
-
-
 
 
 

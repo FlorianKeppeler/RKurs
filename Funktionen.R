@@ -81,14 +81,6 @@ seq(0, 100, by = 10)
 
 
 
-# Aufgabe
-
-# Erzeugen Sie mit der Funktion sample() einen Vektor bestehend aus 100 zufälligen
-# Zahlen zwischen 1 und 5
-# Berechnen Sie die Summe, den Mittelwert und Median des Vektors
-# Sortieren Sie den Vektor von großen nach kleinen Zahlen (Schauen sie sich dafür die Argumente der sort() Funktion an)
-# Finden Sie mittels R Hilfe und Google eine Funktion die ausgibt wie oft eine Zahl im Vektor vorkommt
-
 
 # Exkurs wenn Zeit ist: eigene Funktionen schreiben
 

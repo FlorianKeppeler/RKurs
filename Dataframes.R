@@ -50,9 +50,11 @@ df[df$Alter > 25, ]
 
 # durch Dataframes bleibt der Code lesbarer
 
-df$coolnes = 1000
+df$Coolnes = 1000
 
-df$eyecolor = c("blue", "brown", "brown")
+df
+
+df$Hut = c(TRUE, FALSE, FALSE)
 
 # Daten einlesen
 
@@ -63,29 +65,29 @@ pirates = read.csv("C:/RKurs/pirates.csv")
 # erster Überblick
 head(pirates)
 
-
-
-
-
-
-unique(pirates$favorite.pirate)
-
-pirates$BMI = pirates$weight / pirates$height
-
-pirates[pirates$BMI == max(pirates$BMI), ]
-
-
-summary(pirates$tattoos)
-
 table(pirates$sex)
 
-t.test(pirates$weight[pirates$sex == "male"], pirates$weight[pirates$sex == "female"])
+mean(pirates$height)
 
-boxplot(pirates$weight[pirates$sex == "male"], pirates$weight[pirates$sex == "female"])
+# Signifikanz Test 
+# Gibt es einen signifikanten Unterschied des mittleren Gewichts von weiblichen
+# und männlichen Pirat:innen
 
-plot(density(pirates$weight[pirates$sex == "male"]),
-     main = "",
-     xlim = c(35, 120),
-     ylim = c(0, 0.05), col = "blue")
+# -> t test
 
-lines(density(pirates$weight[pirates$sex == "female"]), col="red")
+# davor test auf Normalverteilung
+
+# shapiro test
+
+shapiro.test(pirates$weight[pirates$sex == "male"])
+shapiro.test(pirates$weight[pirates$sex == "female"])
+
+shapiro.test(rnorm(1000))
+
+t.test(x = pirates$weight[pirates$sex == "male"],
+       y = pirates$weight[pirates$sex == "female"])
+
+t.test(x = rnorm(1000, mean = 0, sd = 1), y = rnorm(1000, mean = 100, sd = 1))
+
+# Übung Dataframes
+

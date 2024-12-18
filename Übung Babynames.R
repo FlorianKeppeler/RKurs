@@ -11,7 +11,14 @@ index = 1:length(years)
 
 years[index]
 
+for(i in 1:length(years)){
+  
+  print(years[i])
+}
+
 # bis hierher vormachen
+
+
 
 popular = character()
 

@@ -3,10 +3,10 @@
 #----------------------------------------------------
 
 # Vektoren erzeugen
-# -> sind aneinander hängende Werte
+# -> sind aneinander h?ngende Werte
 
 vec1 = c(1, 2, 3, 123)
-# -> c() steht für combine als Verkettung der Werte
+# -> c() steht f?r combine als Verkettung der Werte
 
 vec1
 # -> so werden die verketteten Werte dargestellt
@@ -21,14 +21,14 @@ vec1 > 2
 
 # Warum ist das hilfreich?
 # -> Beispiel von vorheriger Aufgabe, Abfrage von auf mehrere Werte muss nur einmal
-# durchgeführt werden
+# durchgef?hrt werden
 vec1 %% 2 == 0
 
 # Vektoren zuweisen und erweitern
 vec2 = vec1 * 2
-# -> das Ergebnis lässt sich dann wiederum in einem Vektor speichern
+# -> das Ergebnis l?sst sich dann wiederum in einem Vektor speichern
 
-# Werte zu einem Vektor hinzufügen
+# Werte zu einem Vektor hinzuf?gen
 vec2 = c(vec2, 15, 5, 35)
 
 # Indizierung: einzelne Elemente eines Vektors ansteuern
@@ -42,22 +42,22 @@ a = vec2[4]
 b = vec2[1] * a
 
 vec2 = c(vec2, b)
-# -> Variablen lassen sich genau wie Werte an Vektoren anhängen
+# -> Variablen lassen sich genau wie Werte an Vektoren anh?ngen
 
 # mehrere Elemente gleichzeitig aus Vektor abfragen
 
 
 vec1[c(2, 4)]
-# -> wenn mehrere Werte übergeben werden, müssen diese immer als Vektor vorliegen
+# -> wenn mehrere Werte ?bergeben werden, m?ssen diese immer als Vektor vorliegen
 
 vec1[1:3]
 
 vec1[2:4]
 
-# -> funktioniert, weil R hier einen Vektor zurückgibt
+# -> funktioniert, weil R hier einen Vektor zur?ckgibt
 1:10
 
-# Filtern über Indizierung
+# Filtern ?ber Indizierung
 
 vec1 %% 2 == 0
 
@@ -76,7 +76,7 @@ vec1[vec1 > 2]
 
 vec1[-1]
 # Was passiert hier?
-# -> alle außer dem ersten Element
+# -> alle au?er dem ersten Element
 
 vec1[c(-2, -4)]
 vec1[-c(2, 4)]
@@ -84,7 +84,7 @@ vec1[-c(2, 4)]
 vec1[-(1:3)]
 
 vec1 = vec1[-1]
-# -> so lassen sich Elemente löschen
+# -> so lassen sich Elemente l?schen
 
 # Werte editieren
 vec1[4] = 10
@@ -95,12 +95,13 @@ vec1[1:4] = 20
 
 vec1
 
-vec2 = c(vec2, "Hallo")
+# Achtung bei Zahlen und Text:
+vec2[1] = "Hallo"
 
 vec2 * 2
 # Warum gibt es diesen Fehler?
 # -> Vektoren sind ein inklusives System: Wenn ein Datentyp dazu kommt der nicht
 # zu den bisherigen Datentypen passt, dann wandeln sich die bestehenden Datentypen um
-# um den neuen Datentyp willkommen zu heißen
-# -> netter Gedanke, führt aber oft zu ungewollten Fehlern
+# um den neuen Datentyp willkommen zu hei?en
+# -> netter Gedanke, f?hrt aber oft zu ungewollten Fehlern
 

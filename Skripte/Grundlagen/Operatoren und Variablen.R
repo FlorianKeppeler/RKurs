@@ -46,12 +46,29 @@
 
 4 >= 2
 
+# VerknÃ¼pfung von logischen Abfragen
+
+# Und
+
+4 > 2 && 4 > 3
+
+2 < 4 %% 2 > 3
+
+# -> nur dann wahr wenn beide Bedingungen wahr sind
+
+
+# Oder
+
+2 < 4 || 2 > 3
+# -> sobald eine der Bedingungen wahr ist
+
+
 # Zuweisungsoperatoren
 
 # -> ein Wert wird zur Variable
 
 a <- 4
-# R spezifische Schreibweise -> wird Ihnen ständig begegnen im Kontext mit R
+# R spezifische Schreibweise -> wird Ihnen st?ndig begegnen im Kontext mit R
 
 b = 2
 # -> viel universellere Schreibart, aber Fehlerquelle mit logischen Operator == 
@@ -66,7 +83,7 @@ b
 b * 5
 
 # was Sie vielleicht bemerkt haben: Variablen tauchen in Environment auf
-# -> wenn Variablen angelegt werden gibt es eine tatsächliche Kopie der Werte
+# -> wenn Variablen angelegt werden gibt es eine tats?chliche Kopie der Werte
 # im Arbeitsspeicher -> somit sind die Werte auch nach der Berechnung von R
 # auffindbar
 
@@ -81,7 +98,7 @@ d = c * a * b
 d = d - c
 
 
-# Zusatz: Character
+# Exkurs: Character
 
 a = "Hallo"
 

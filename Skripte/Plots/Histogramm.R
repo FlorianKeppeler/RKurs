@@ -2,23 +2,23 @@
 # Visualisierungen
 #--------------------------------------------------
 
-pirates = read.csv("C:/RKurs/pirates.csv")
+pirates = read.csv("C:/RKurs/Datasets/auswahl/pirates.csv")
 
 # Histogramm
 
 hist(pirates$weight)
 
-# -> super für einen ersten Überblick der Daten
-# aber häßlich!!!
+# -> super f?r einen ersten ?berblick der Daten
+# aber h??lich!!!
 
 colors()
 
 hist(pirates$weight,
      col = "thistle",
      border = "thistle2", 
-     main = "Gewichtsverteilung Pirat:innen",
+     main = "Gewichtsverteilung",
      xlab="Gewicht",
-     ylab = "Häufigkeit")
+     ylab = "HÃ¤ufigkeit")
 
 abline(v = mean(pirates$weight),
        lty = 2,
@@ -27,7 +27,7 @@ abline(v = mean(pirates$weight),
 
 abline(h = seq(0, 200, by = 50), col="grey90")
 
-# Übung Histogramm
+# ?bung Histogramm
 
 
 

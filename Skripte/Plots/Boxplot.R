@@ -2,16 +2,18 @@
 # Boxplot
 #------------------------------------
 
-pirates = read.csv("C:/RKurs/Datasets/pirates.csv")
+pirates = read.csv("C:/RKurs/Datasets/auswahl/pirates.csv")
 
 names(pirates)
 
 boxplot(pirates[,c("parrots", "tattoos")])
 
-# stimmiger wäre:
+
+# stimmiger w?re:
 
 boxplot(pirates$weight[pirates$sex == "male"], pirates$weight[pirates$sex == "female"],
-        names = c("Pirat", "Piratin"),
+        names = c("Piraten", "Piratinnen"),
         outline = FALSE,
-        col = c("steelblue", "thistle"),
+        col = c("steelblue", "salmon"),
+        ylab = "Gewicht",
         main = "Gewichtsverteilung nach Geschlecht")

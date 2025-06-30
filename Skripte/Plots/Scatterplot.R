@@ -5,7 +5,7 @@
 plot(x = pirates$weight, 
      y = pirates$height,
      pch = 20, 
-     main = "Zusammenhang Höhe und Gewicht", xlab = "Gewicht", ylab = "Höhe")
+     main = "Zusammenhang GrÃ¶ÃŸe und Gewicht", xlab = "Gewicht", ylab = "GrÃ¶ÃŸe")
 
 lines(smooth.spline(pirates$weight,
                     pirates$height,
@@ -20,8 +20,8 @@ cor_coef = round(cor(pirates$height, pirates$weight), 2)
 
 text(x = 40,
      y = 200,
-     labels = cor_coef)
+     labels = paste("r = ", cor_coef, sep=""))
 
 
-# Übung Scatterplot
+# ?bung Scatterplot
 

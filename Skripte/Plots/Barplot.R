@@ -2,7 +2,7 @@
 # Boxplot
 #------------------------------------------
 
-pirates = read.csv("C:/RKurs/Datasets/pirates.csv")
+pirates = read.csv("C:/RKurs/Datasets/auswahl/pirates.csv")
 
 pirates$favorite.pirate
 
@@ -23,4 +23,4 @@ par(mar = c(7,4,4,2))
 barplot(tmp,
         las = 2,
         col = c("steelblue", "thistle","violet","skyblue","wheat","salmon"),
-        main = "Häufigkeit Lieblingspirat")
+        main = "HÃ¤ufigkeit Lieblingspirat")

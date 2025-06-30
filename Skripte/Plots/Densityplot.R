@@ -3,7 +3,7 @@
 #--------------------------------
 
 
-pirates = read.csv("C:/RKurs/Datasets/pirates.csv")
+pirates = read.csv("C:/RKurs/Datasets/auswahl/pirates.csv")
 
 density(pirates$weight[pirates$sex == "male"])
 
@@ -20,16 +20,16 @@ lines(density(pirates$weight[pirates$sex == "female"]))
 # unterschiedliche Farben
 
 plot(density(pirates$weight[pirates$sex == "male"]),
-     col= "blue",
+     col= "steelblue",
      lwd = 2,
      ylim = c(0, 0.05),
      main = "Verteilung Gewicht nach Geschlecht",
-     xlab="Gewicht")
+     xlab="Gewicht", )
 
 lines(density(pirates$weight[pirates$sex == "female"]),
-      col = "red",
+      col = "salmon",
       lwd = 2)
 
 legend("topright",
-       legend = c("female", "male"),
-       fill =c("red", "blue"), bty = "n")
+       legend = c("Piratinnen", "Piraten"),
+       fill =c("salmon", "steelblue"), bty = "n")

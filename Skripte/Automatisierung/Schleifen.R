@@ -1,117 +1,88 @@
-#----------------------------------------------------
-# Schleifen in R
-#--------------------------------------------------
+#-------------------------------------------------------------
+# Schleifen
+#--------------------------------------------------------
 
-# Was macht eine Schleife?
 
-# Zeigen dass eine Schleife einfach einen bestimmten Code Abschnitt ausführt
+# Daten einlesen
+anomalies = read.csv("C:/RKurs/Datasets/auswahl/temperature_anomalies.csv")
 
-a = 2
-
-a = a + a
-
-a
-
-# jetzt als Schleife
-
-a = 2
-
-count = 0
-
-while(a < 1000) {
+create_timeline = function(country_name, starting_year){
   
-  a = a + a
-  
-  count = count + 1
-}
-
-a
-
-count
-# -> while Schleife, wenn man nicht weiß wie oft die Schleife laufen soll
-
-# allerdings kann man die Schleife auch anders ausführen
-
-a = 2
-
-count = 0
-
-while(count < 100) {
-  
-  a = a + a
-  
-  count = count + 1
-}
-
-a
-
-# klassischerweise nutzt man hierfür die for Schleife
-
-
-for(i in c(1, 3, 4, 2, 5)) {
-  
-  print(i)
-}
-# -> i nimmt alle Werte aus dem Vektor an
-
-
-a = 2
-
-for(i in 1:100) {
-  
-  a = a + a
-}
-# -> die Schleife läuft so lange wie der Vektor lang ist
-
-
-# Übung Fibonacci
-#------------------------------------------------
-#------------------------------------------------
-#------------------------------------------------
-
-
-# großer Vorteil von for Schleifen:
-
-fib = numeric()
-
-fib[1] = 0
-fib[2] = 1
-
-fib
-
-for(i in 3:10){
-  
-  fib[i] = fib[i-1] + fib[i-2]
-}
-
-fib
-
-plot(fib,
-     type= "l")
-
-
-#------------------------------------------
-# If else
-#--------------------------------------
-
-for(i in 1:100) {
-  
-  if(i %% 2 == 0) {
+  if(starting_year < 1960){
     
-    print("gerade")
-    
-  }else{
-    
-    print("ungerade")
+    starting_year = 1960
   }
+  
+  if(country_name %in% anomalies$country){
+    
+  # Datensatz auf Deutschland Filtern
+  selected_data = anomalies[anomalies$country == country_name, ]
+  
+  # Datensatz auf Jahre nach 1970 Filtern
+  selected_data = selected_data[selected_data$Year > starting_year, ]
+  
+  # Die Temperaturanomalien Ã¼ber die Zeit darstellen
+  plot(selected_data$Year,
+       selected_data$Temperature.anomaly,
+       main = country_name,
+       ylab = "Temperaturabweichung vom Mittel")
+  
+  # Trendlinie hinzufÃ¼gen
+  trending_line = smooth.spline(selected_data$Year, selected_data$Temperature.anomaly)
+  
+  lines(trending_line)
+  
+  # Gibt es eine VerÃ¤nderung der Temperaturanomalien Ã¼ber die Zeit?
+  cor_coef = cor(selected_data$Temperature.anomaly, selected_data$Temperature.anomaly)
+  
+  return (cor_coef)
+  
+  }else{
+    print(paste(country_name, "ist nicht im Datensatz enthalten"))
+  }
+  
 }
 
 
-# Übung Schleifen mit if else
-#-----------------------------------------------
-#-----------------------------------------------
-#-----------------------------------------------
+create_timeline("Germany", 1920)
 
+create_timeline("Switzerland", 1920)
+create_timeline("Sri Lanka", 1920)
 
+# aus einem Vektor 
+country_names = unique(anomalies$country)
 
+par(mfrow=c(2,2))
+
+create_timeline(country_names[1], 1970)
+create_timeline(country_names[2], 1970)
+create_timeline(country_names[3], 1970)
+create_timeline(country_names[4], 1970)
+
+# geht schon, aber ist schon nervig. Gibt es da nicht etwas das das fÃ¼r uns Ã¼bernimmt?
+
+par(mfrow=c(2,2))
+
+for(i in 1:16){
+  
+  create_timeline(country_names[i], 1970)
+}
+
+# kann auch Ã¼ber den gesamten Datensatz ausgefÃ¼hrt werden
+for(i in 1:length(country_names)){
+  
+  create_timeline(country_names[i], 1970)
+}
+
+# Was aber wenn ich gar nicht weiÃŸ wie oft ich die Schleifen berechnen mÃ¶chte?
+
+coef = 1
+i = 1
+
+while(abs(coef) > 0.05){
+
+  coef = create_timeline(country_names[i], 1970)  
+  
+  i = i + 1
+}
 

@@ -20,6 +20,69 @@ lines(trendlinie,
 
 # wird schnell un√ºbersichtlich...
 
+# hier kommen Funktionen ins Spiel:
+
+mal_zwei = function(x){
+  
+  x = x * 2
+  
+}
+
+mal_zwei(4)
+
+mal_zwei = function(x){
+  
+  x = x * 2
+
+  return(x)  
+}
+
+mal_zwei(4)
+
+
+ist_gerade = function(x){
+  
+  return(x %% 2 == 0)
+}
+
+ist_gerade(2)
+
+
+ist_gerade = function(x){
+  
+  result = x %% 2 == 0
+  
+  if(result == TRUE){
+    
+    print("Zahl ist gerade")
+  
+    }else{
+    
+    print("Zahl ist ungerade")
+  }
+}
+
+ist_gerade(4)
+
+ist_gerade = function(x){
+  
+  result = x %% 2 == 0
+  
+  if(result == TRUE){
+    
+    print(paste(x ,"ist gerade"))
+    
+  }else{
+    
+    print(paste(x, "ist ungerade"))
+  }
+}
+
+ist_gerade(2)
+
+# ‹bung
+
+
 create_scatterplot = function(name_of_x, name_of_y){
   
   

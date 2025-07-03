@@ -61,6 +61,14 @@ create_timeline(country_names[4], 1970)
 
 # geht schon, aber ist schon nervig. Gibt es da nicht etwas das das für uns übernimmt?
 
+for(i in 1:10){
+  
+  print("Hallo")
+}
+
+
+
+
 par(mfrow=c(2,2))
 
 for(i in 1:16){

@@ -13,24 +13,27 @@ hist(pirates$weight)
 
 colors()
 
+
+# png("C:/RKurs/Grafiken/Histogramm2.png", width = 1000, height = 750, pointsize = 20)
+  
 hist(pirates$weight,
-     col = "thistle",
-     border = "thistle2", 
-     main = "Gewichtsverteilung",
-     xlab="Gewicht",
-     ylab = "Häufigkeit")
+     # col = "thistle",
+     # border = "thistle2", 
+     # main = "Gewichtsverteilung",
+     # xlab="Gewicht",
+     # ylab = "Häufigkeit"
+     )
 
-abline(v = mean(pirates$weight),
-       lty = 2,
-       col = "tomato",
-       lwd = 2)
+# abline(v = mean(pirates$weight),
+#        lty = 2,
+#        col = "tomato",
+#        lwd = 2)
+# 
+# abline(h = seq(0, 200, by = 50), col="grey90")
 
-abline(h = seq(0, 200, by = 50), col="grey90")
+# dev.off()
 
 # ?bung Histogramm
-
-
-
 
 
 

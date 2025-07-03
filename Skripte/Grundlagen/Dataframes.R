@@ -57,11 +57,11 @@ df[df$Alter > 25, ]
 
 
 # Spalten hinzufügen
-df$Coolnes = 1000
+df$Ort = "Freiburg"
 
 df
 
-df$Hut = c(TRUE, FALSE)
+df$FVA = c(TRUE, FALSE)
 
 df$Hut = c(TRUE, FALSE, FALSE)
 
